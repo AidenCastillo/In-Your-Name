@@ -1,10 +1,11 @@
-[gd_scene load_steps=24 format=4 uid="uid://xculvctswc1t"]
+[gd_scene load_steps=25 format=4 uid="uid://xculvctswc1t"]
 
 [ext_resource type="Texture2D" uid="uid://bj1c1bmk6tw1m" path="res://assets/Modern tiles_Free/Interiors_free/48x48/Room_Builder_free_48x48.png" id="1_oanee"]
 [ext_resource type="Texture2D" uid="uid://5nsjvk6ql4a" path="res://assets/Modern tiles_Free/Interiors_free/48x48/Interiors_free_48x48.png" id="2_8ofgj"]
 [ext_resource type="Texture2D" uid="uid://bbjn58yfhbn02" path="res://assets/Modern tiles_Free/Old/Tileset_48x48_16.png" id="3_gkhlo"]
 [ext_resource type="Texture2D" uid="uid://dvnwdvvt2ew73" path="res://assets/Modern tiles_Free/free_overview.png" id="4_s74eq"]
 [ext_resource type="PackedScene" uid="uid://dty18ww0qfqxm" path="res://scenes/player.tscn" id="5_cshrh"]
+[ext_resource type="PackedScene" uid="uid://gtwk44wgxk4q" path="res://scenes/elevator.tscn" id="6_8ofgj"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_rs4ek"]
 texture = ExtResource("1_oanee")
@@ -23897,3 +23898,9 @@ tile_set = SubResource("TileSet_hfvbn")
 
 [node name="Player" parent="." instance=ExtResource("5_cshrh")]
 position = Vector2(265, -32)
+
+[node name="Elevator" parent="." instance=ExtResource("6_8ofgj")]
+position = Vector2(433, -623)
+
+[node name="Elevator2" parent="." instance=ExtResource("6_8ofgj")]
+position = Vector2(96, -623)

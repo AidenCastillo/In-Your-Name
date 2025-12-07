@@ -12,3 +12,9 @@ func _physics_process(delta):
 
 	velocity = input * speed
 	move_and_slide()
+func _ready():
+	await get_tree().process_frame
+
+	var spawn = get_tree().current_scene.get_node_or_null(GameState.spawn_point)
+	if spawn:
+		global_position = spawn.global_position

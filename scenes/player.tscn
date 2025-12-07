@@ -10,6 +10,7 @@ size = Vector2(134, 129)
 
 [node name="Player" type="CharacterBody2D" parent="."]
 script = ExtResource("1_g2els")
+speed = null
 
 [node name="Sprite2D" type="Sprite2D" parent="Player"]
 scale = Vector2(0.25, 0.25)
