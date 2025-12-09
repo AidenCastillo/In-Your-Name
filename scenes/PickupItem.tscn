@@ -1,0 +1,22 @@
+[gd_scene load_steps=4 format=3 uid="uid://dtxb0838iqw3t"]
+
+[ext_resource type="Texture2D" uid="uid://cwwm3j6hvvfv1" path="res://assets/flashlight.png" id="1_vh7np"]
+[ext_resource type="Script" uid="uid://bugdirl83uyc" path="res://scenes/pickup_item.gd" id="1_yimiu"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_yimiu"]
+size = Vector2(72, 33)
+
+[node name="PickupItem" type="Node2D"]
+script = ExtResource("1_yimiu")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+scale = Vector2(0.1, 0.1)
+texture = ExtResource("1_vh7np")
+
+[node name="Area2D" type="Area2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
+position = Vector2(1, 2.5)
+shape = SubResource("RectangleShape2D_yimiu")
+
+[connection signal="body_entered" from="Area2D" to="." method="_on_area_2d_body_entered"]
