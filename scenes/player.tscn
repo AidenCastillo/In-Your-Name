@@ -2,15 +2,11 @@
 
 [ext_resource type="Script" uid="uid://datpr6e4p4v6r" path="res://scripts/player.gd" id="1_g2els"]
 [ext_resource type="Texture2D" uid="uid://cu55u4cnqq2p7" path="res://assets/player.png" id="2_g2els"]
+[ext_resource type="Texture2D" uid="uid://duqvs1cjg7k7x" path="res://assets/Light.png" id="3_qhqgy"]
+[ext_resource type="Script" uid="uid://y02acghwti40" path="res://scenes/flashlight.gd" id="4_dqkch"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_g2els"]
 size = Vector2(134, 129)
-
-[sub_resource type="Gradient" id="Gradient_g2els"]
-colors = PackedColorArray(1, 1, 1, 1, 0, 0, 0, 1)
-
-[sub_resource type="GradientTexture2D" id="GradientTexture2D_qhqgy"]
-gradient = SubResource("Gradient_g2els")
 
 [node name="Player" type="CharacterBody2D"]
 script = ExtResource("1_g2els")
@@ -30,7 +26,11 @@ shape = SubResource("RectangleShape2D_g2els")
 position = Vector2(14, 17)
 
 [node name="Flashlight" type="PointLight2D" parent="."]
-position = Vector2(94, 5)
-scale = Vector2(2.4062502, 1)
+position = Vector2(67, 0)
+scale = Vector2(0.19261241, 0.1)
 enabled = false
-texture = SubResource("GradientTexture2D_qhqgy")
+shadow_enabled = true
+shadow_item_cull_mask = 8
+texture = ExtResource("3_qhqgy")
+offset = Vector2(128, 0)
+script = ExtResource("4_dqkch")

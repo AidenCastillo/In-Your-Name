@@ -28,11 +28,23 @@ func _physics_process(delta: float) -> void:
 	move_and_slide()
 
 func is_in_flashlight(light) -> bool:
-	var dir_to_enemy = (global_position - light.global_position).normalized()
-	var light_dir = Vector2.RIGHT.rotated(light.global_rotation)  # Right is default direction
-	var angle_diff = light_dir.angle_to(dir_to_enemy)
-	var max_angle = deg_to_rad(30)  # half cone angle
-	var distance = global_position.distance_to(light.global_position)
-	if angle_diff < max_angle and distance < light.texture.get_size().x:  # simple cone check
-		return true
-	return false
+# Simple cone check
+	var to_position: Vector2 = global_position - light.global_position
+	var distance: float = to_position.length()
+	if distance > light.range:
+		return false
+	
+	var angle_to_position: float = to_position.angle()
+	var half_spot_angle: float = deg_to_rad(light.spot_angle / 2)
+	var light_direction: float = light.rotation
+	var angle_difference: float = abs(ang_diff(angle_to_position, light_direction))
+	
+	return angle_difference <= half_spot_angle
+	
+func ang_diff(angle1: float, angle2: float) -> float:
+	var diff: float = angle1 - angle2
+	while diff > PI:
+		diff -= TAU
+	while diff < -PI:
+		diff += TAU
+	return diff

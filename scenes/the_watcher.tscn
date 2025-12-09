@@ -7,6 +7,7 @@
 size = Vector2(31, 38)
 
 [node name="The Watcher" type="CharacterBody2D"]
+light_mask = 9
 script = ExtResource("1_rhxps")
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
