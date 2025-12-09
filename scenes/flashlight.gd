@@ -3,6 +3,7 @@ extends PointLight2D
 @export var range: float = 200.0
 @export var spot_angle: float = 60.0
 
+
 # make public function to check if a position is in the light area
 func is_position_in_light(position: Vector2) -> bool:
 	var to_position: Vector2 = position - global_position

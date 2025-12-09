@@ -8,6 +8,7 @@ var spawn_point: String = "Spawn"
 var inventory: Array[String] = []
 var visited_rooms := {}
 
+var battery: float = 100.0
 # For future meta-horror flags
 var reality_shift_level: int = 0
 

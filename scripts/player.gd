@@ -41,6 +41,11 @@ func _physics_process(_delta):
 		input = input.normalized()
 
 	velocity = input * speed
+
+	# update sprite flip
+	var sprite = $Sprite2D
+	if sprite:
+		sprite.update_sprite_flip(input)
 	
 	if has_flashlight and flashlight.visible:
 		var mouse_pos = get_global_mouse_position()

@@ -1,0 +1,14 @@
+[gd_scene load_steps=2 format=3 uid="uid://cyy0eqf4vux3f"]
+
+[ext_resource type="Script" uid="uid://bh30m8b278qbw" path="res://scenes/hud.gd" id="1_ahhtf"]
+
+[node name="HUD" type="Node2D"]
+script = ExtResource("1_ahhtf")
+
+[node name="FlashLightBatteryProg" type="ProgressBar" parent="."]
+offset_left = -572.0
+offset_top = -321.0
+offset_right = -273.0
+offset_bottom = -294.0
+
+[node name="Camera2D" type="Camera2D" parent="."]
